@@ -1,4 +1,4 @@
-import { createStore } from '../../lib/stateme.min';
+import { createStore } from '../../lib/appstateme.min';
 
 export default createStore({
     username: 'Emad Alam',

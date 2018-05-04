@@ -39,7 +39,7 @@ const config = {
         ],
     },
     externals: {
-        react: 'react'
+        react: 'react',
     },
     resolve: {
         modules: [path.resolve('./node_modules'), path.resolve('./src')],

@@ -3,7 +3,7 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 
-import { connect } from '../../lib/stateme.min';
+import { connect } from '../../lib/appstateme.min';
 
 import MyStore from './store';
 import * as MyActions from './actions';

@@ -1,8 +1,8 @@
 {
-  "name": "stateme",
+  "name": "appstateme",
   "version": "1.0.0",
   "description": "Simple yet powerful state management library without the noise.",
-  "main": "lib/stateme.js",
+  "main": "lib/appstateme.js",
   "scripts": {
     "build": "webpack --mode=none && webpack --mode=production",
     "dev": "webpack --progress --colors --watch --mode=development",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mesmerised/stateme.git"
+    "url": "https://github.com/mesmerised/appstateme.git"
   },
   "keywords": [
     "simple",
@@ -24,9 +24,9 @@
   "author": "Emad Alam <emad.alam@yahoo.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mesmerised/stateme/issues"
+    "url": "https://github.com/mesmerised/appstateme/issues"
   },
-  "homepage": "https://github.com/mesmerised/stateme#readme",
+  "homepage": "https://github.com/mesmerised/appstateme#readme",
   "peerDependencies": {
     "react": "^15.0.0-0 || ^16.0.0-0"
   },

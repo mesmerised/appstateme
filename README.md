@@ -1,4 +1,4 @@
-# stateme
+# appstateme
 
 A tiny yet powerful state management library that lets you focus on your application logic without getting in your way.
 
@@ -8,10 +8,10 @@ While there are fairly good amount of fully fledged libraries out there, not alw
 Though this library is view layer agnostic, it blends well with [`react`](https://reactjs.org/) and you get a rapid development framework out of the box.
 
 #### Install
-The library is available as a UMD package. If you prefer to use the traditional approach, you may download and include the [stateme.min.js](./lib/stateme.min.js) file directly in the `script` tag.
+The library is available as a UMD package. If you prefer to use the traditional approach, you may download and include the [appstateme.min.js](./lib/appstateme.min.js) file directly in the `script` tag.
 
 ```shell
-npm install --save stateme
+npm install --save appstateme
 ```
 
 ## Usage Examples
@@ -21,7 +21,7 @@ Check out the [examples](./examples/) folder for some rudimentary setups.
 ```js
 // Step 1: Create your store (store.js)
 // ------
-import { createStore } from 'stateme';
+import { createStore } from 'appstateme';
 
 export default createStore({/* initial state */});
 
@@ -77,7 +77,7 @@ class MyUserComponent extends Component {
 
 // Step 4: Stitch store, actions and component
 // ------
-import { connect } from 'stateme';
+import { connect } from 'appstateme';
 
 import store from './store.js';
 import * as actions from './actions.js';
@@ -136,4 +136,4 @@ npm run test    # run tests
 ```
 
 ## License
-`stateme` is licensed under the [MIT License](https://opensource.org/licenses/MIT)
+`appstateme` is licensed under the [MIT License](https://opensource.org/licenses/MIT)

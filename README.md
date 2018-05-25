@@ -141,11 +141,13 @@ boundActions.updateTodo(payload); // `store` param is always `MyStore`
 
 #### `createStore(initialState)`: `Store Instance`
 Creates the store instance with the optional provided initial state values.
+
 | param  | type  | required | description |
 | ------ | ----- | -------- | ----------- |
 | `initialState` | `Object` | no | Initial state of the store |
 
 The store instance has the following properties for manipulating and observing the state of the store.
+
 | property  | type  | description |
 | --------- | ----- | ----------- |
 | `state` | `getter/setter` | The property that holds the values of the state. Use the `state` property directly to get/set the state of your store, the subscribed handlers would be automatically invoked internally.<br><br>Example:<br>```mystore.state = {key1: value1, ... }``` |
@@ -155,6 +157,7 @@ The store instance has the following properties for manipulating and observing t
 
 #### `connect(store, actions)`: `(WrappedComponent) => Component`
 Creates a HOC function that binds together the store and the actions. Use this HOC to wrap components that would react to the change in the state of the store and receive all state properties as their props. In addition, the components would also receive all the `actions` as a prop.
+
 | param  | type  | required | description |
 | ------ | ----- | -------- | ----------- |
 | `store` | `Store Instance` | yes | Previously created store instance |
@@ -164,6 +167,7 @@ Creates a HOC function that binds together the store and the actions. Use this H
 #### `bindStoreToActions(store, actions)`: `Object`
 Returns the bound actions object. Each of the bound action receives the provided store as its first argument.
 This method is intended to be used in applications that do not use react. Prefer `connect` method if already using react.
+
 | param  | type  | required | description |
 | ------ | ----- | -------- | ----------- |
 | `store` | `Store Instance` | yes | Previously created store instance |

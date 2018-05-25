@@ -1,0 +1,54 @@
+@import "node_modules/normalize-scss/sass/normalize";
+
+@include normalize();
+
+.todolist {
+    font-size: 16px;
+
+    &__container {
+        padding: 8px;
+        border: 1px solid #cccccc;
+        width: 420px;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    &__itemsContainer {
+        margin: 20px 0 0;
+        padding: 8px 0;
+        border-top: 1px solid #cccccc;
+    }
+
+    &__item {
+        margin: 8px 0;
+        list-style: none;
+
+        &_completed {
+            text-decoration: line-through;
+            font-style: italic;
+        }
+    }
+
+    &__input {
+        font-size: 14px;
+        padding: 2px;
+        &::-webkit-input-placeholder {
+            font-style: italic;
+            color: #cccccc;
+        }
+    }
+
+    &__button {
+        font-size: 12px;
+        margin: 0 4px;
+        border-radius: 4px;
+        background-color: #4286f4;
+        padding: 4px 8px;
+        color: #fcfcfc;
+
+        &_disabled {
+            background: #fcfcfc;
+            color: #cccccc;
+        }
+    }
+}

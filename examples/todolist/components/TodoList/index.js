@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-extraneous-dependencies, react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -18,7 +18,9 @@ function TodoList({
             createdAt={items[id].createdAt}
             completedAt={items[id].completedAt}
             onClickDelete={onClickDelete ? () => onClickDelete(id) : null}
-            onClickComplete={onClickComplete ? () => onClickComplete(id) : null}
+            onClickComplete={onClickComplete ? () =>
+                onClickComplete(id, !!items[id].completedAt) : null
+            }
         />
     ));
 

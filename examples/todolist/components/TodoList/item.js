@@ -9,23 +9,24 @@ function TodoListItem({
     onClickDelete,
     onClickComplete,
 }) {
+    const isComplete = !!completedAt;
+
     let infoText = `Created At: ${new Date(createdAt).toGMTString()}`;
-    if (completedAt) {
+    if (isComplete) {
         infoText = `${infoText}\nCompleted At: ${new Date(completedAt).toGMTString()}`;
     }
 
     return (
-        <li className="todolist todolist__item" title={infoText}>
-            <span className={`todolist todolist__itemName ${completedAt ? 'todolist__itemName_completed' : ''}`}>{value}</span>
+        <li className={`todolist todolist__item ${completedAt ? 'todolist__item_completed' : ''}`} title={infoText}>
+            <span className="todolist todolist__item__name">{value}</span>
             <button
-                className="todolist todolist__icon todolist__icon_completed"
-                disabled={completedAt}
+                className="todolist todolist__button todolist__iconButton todolist__iconButton_completed"
                 onClick={onClickComplete}
             >
-                Complete
+                { isComplete ? 'Undone' : 'Done' }
             </button>
             <button
-                className="todolist todolist__icon todolist__icon_delete"
+                className="todolist todolist__button todolist__iconButton todolist__iconButton_delete"
                 onClick={onClickDelete}
             >
                 Delete

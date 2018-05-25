@@ -3,6 +3,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+const KEYS = {
+    ENTER: 'Enter',
+};
+
 class TodoListInput extends Component {
     static defaultProps = {
         onClickAdd: null,
@@ -12,6 +16,14 @@ class TodoListInput extends Component {
         value: '',
         isButtonDisabled: true,
     };
+
+    handleOnKeyPress = (ev) => {
+        const { key } = ev;
+
+        if (key !== KEYS.ENTER) return true;
+
+        return this.handleOnClickAdd();
+    }
 
     handleOnChange = (ev) => {
         const { value } = ev.target;
@@ -32,7 +44,7 @@ class TodoListInput extends Component {
 
         if (onClickAdd) {
             onClickAdd(value);
-            this.setState({ value: '' });
+            this.setState({ value: '', isButtonDisabled: true });
         }
     }
 
@@ -46,10 +58,11 @@ class TodoListInput extends Component {
                     type="text"
                     value={value}
                     placeholder="Enter value"
+                    onKeyPress={this.handleOnKeyPress}
                     onChange={this.handleOnChange}
                 />
                 <button
-                    className="todolist todolist__button"
+                    className={`todolist todolist__button ${isButtonDisabled ? 'todolist__button_disabled' : ''}`}
                     disabled={isButtonDisabled}
                     onClick={this.handleOnClickAdd}
                 >

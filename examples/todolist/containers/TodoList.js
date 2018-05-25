@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+
 import React, { Component } from 'react';
 import { ConnectedStoreHOC } from '../store';
 
@@ -18,26 +20,23 @@ class TodoListContainer extends Component {
         removeItem({ id });
     }
 
-    handleOnClickComplete = (id) => {
+    handleOnClickComplete = (id, isComplete) => {
         const { actions } = this.props;
         const { toggleCompleted } = actions;
 
-        toggleCompleted({ id });
+        toggleCompleted({ id, completed: !isComplete });
     }
 
     render() {
         const { items } = this.props;
 
         return (
-            <div>
-                <h4>Todo list</h4>
-                <TodoListComponent
-                    items={items}
-                    onClickAdd={this.handleOnClickAdd}
-                    onClickDelete={this.handleOnClickDelete}
-                    onClickComplete={this.handleOnClickComplete}
-                />
-            </div>
+            <TodoListComponent
+                items={items}
+                onClickAdd={this.handleOnClickAdd}
+                onClickDelete={this.handleOnClickDelete}
+                onClickComplete={this.handleOnClickComplete}
+            />
         );
     }
 }
